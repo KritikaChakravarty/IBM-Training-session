@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="none">
+  <parameter name="ibm_browser" value="edge"/>
+  <test name="Test">
+    <parameter name="ibm_browser" value="chrome"/>
+    <classes>
+      <class name="testNG.Logintest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="EdgeTest">
+    <parameter name="ibm_browser" value="edge"/>
+    <classes>
+      <class name="testNG.Logintest"/>
+    </classes>
+  </test> <!-- EdgeTest -->
+  <test name="Test(failed)" parallel="none">
+    <parameter name="ibm_browser" value="chrome"/>
+    <classes>
+      <class name="testNG.Logintest">
+        <methods>
+          <include name="launchApp"/>
+          <include name="launchApp"/>
+          <include name="verifyLogin"/>
+        </methods>
+      </class> <!-- testNG.Logintest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+  <test name="EdgeTest(failed)" parallel="none">
+    <parameter name="ibm_browser" value="edge"/>
+    <classes>
+      <class name="testNG.Logintest">
+        <methods>
+          <include name="launchApp"/>
+          <include name="launchApp"/>
+          <include name="verifyLogin"/>
+        </methods>
+      </class> <!-- testNG.Logintest -->
+    </classes>
+  </test> <!-- EdgeTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
